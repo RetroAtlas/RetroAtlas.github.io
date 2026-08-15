@@ -1,0 +1,32 @@
+{
+ "atlas": "RetroAtlas",
+ "maps": [
+  {
+   "id": "oddworld",
+   "name": "Oddworld Map",
+   "franchise": "Oddworld",
+   "blurb": "Every camera screen, object and collision line from Abe's Oddysee and Abe's Exoddus, read straight off the game discs.",
+   "url": "https://oddworldmap.com/",
+   "repo": "https://github.com/MagogCartel/OddworldMap",
+   "hosting": "external",
+   "status": "live",
+   "games": [
+    { "id": "ao", "name": "Abe's Oddysee", "platform": "PlayStation", "status": "complete" },
+    { "id": "ae", "name": "Abe's Exoddus", "platform": "PlayStation", "status": "complete" }
+   ]
+  },
+  {
+   "id": "metalslug",
+   "name": "Metal Slug Map",
+   "franchise": "Metal Slug",
+   "blurb": "Stage art, tilemaps and sprite banks lifted off the PlayStation disc, assembled along the axis each stage runs on.",
+   "url": "/MetalSlugMap/",
+   "repo": "https://github.com/RetroAtlas/MetalSlugMap",
+   "hosting": "atlas",
+   "status": "in-progress",
+   "games": [
+    { "id": "msx", "name": "Metal Slug X", "platform": "PlayStation", "status": "in-progress" }
+   ]
+  }
+ ]
+}

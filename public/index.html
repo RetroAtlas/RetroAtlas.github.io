@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#14161a" />
+    <title>RetroAtlas — interactive maps of retro games</title>
+    <meta
+      name="description"
+      content="Interactive maps of retro games, extracted straight from the original discs and ROMs. Every stage, screen and object, browsable in the open."
+    />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href="https://retroatlas.org/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://retroatlas.org/" />
+    <meta property="og:title" content="RetroAtlas — interactive maps of retro games" />
+    <meta
+      property="og:description"
+      content="Interactive maps of retro games, extracted straight from the original discs and ROMs."
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preload" href="catalog.json" as="fetch" crossorigin />
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <h1>RETRO<span>ATLAS</span></h1>
+        <p class="tagline">
+          Interactive maps of retro games, extracted straight from the original discs — not redrawn, not
+          screenshotted. Every one of them says plainly what it knows and where it stops knowing.
+        </p>
+        <div class="find">
+          <input
+            id="q"
+            type="search"
+            placeholder="Search maps, games or platforms…"
+            autocomplete="off"
+            aria-label="Search maps, games or platforms"
+          />
+          <kbd>/</kbd>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <div id="grid" class="grid" aria-live="polite"></div>
+        <p id="empty" class="empty" hidden>No map matches that.</p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Maps are built by reverse-engineering the original releases; the extracted imagery remains the property
+          of its respective rights holders and is presented for research and preservation.
+        </p>
+        <p><a href="https://github.com/RetroAtlas">RetroAtlas on GitHub</a></p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

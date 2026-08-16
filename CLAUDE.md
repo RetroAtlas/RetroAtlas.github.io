@@ -14,6 +14,17 @@ It is the landing page for [retroatlas.org](https://retroatlas.org/), and delibe
 - Search matches every term against one flattened haystack per map, so a query like `playstation oddworld` narrows rather than widens. Keep new catalog fields in `haystack()` if they are worth searching.
 - `/` focuses the search box and `Escape` clears it, matching the viewers this page links to.
 
+## The social card
+
+`public/og.png` is rendered from `tools/og.html`, which is repo-only and never deployed. Change the wordmark, tagline or palette on the page and the card has to be re-rendered to match, in one pass with the compression — a raw screenshot is half again the size, and every version of it stays in history:
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --screenshot=public/og.png tools/og.html
+oxipng -o max --strip safe public/og.png
+```
+
+Keep it at 1200×630, and keep the `og:image:width` and `og:image:height` tags saying so — scrapers lay out the preview from those before the image itself arrives.
+
 ## Hosting
 
 GitHub serves an org site from the repo named `<org>.github.io`, and every other repo in the org is then served as a path beneath that site's domain. So a map hosted here needs no DNS of its own and its `url` is a path, while a map on its own domain keeps one and is linked absolutely — the `hosting` field is what the page reads to tell those apart.

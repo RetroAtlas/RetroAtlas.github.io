@@ -92,6 +92,10 @@ h1 span {
   opacity: 0;
 }
 
+.find input:disabled {
+  opacity: 0.5;
+}
+
 main {
   padding: 40px 0 24px;
 }

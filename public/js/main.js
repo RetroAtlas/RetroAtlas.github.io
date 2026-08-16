@@ -40,13 +40,15 @@ function render(maps) {
   empty.hidden = maps.length > 0;
 }
 
-const maps = await load().catch((err) => {
+let maps = [];
+try {
+  maps = await load();
+  render(maps);
+} catch (err) {
   grid.replaceChildren(el("p", "empty", "The catalog could not be loaded."));
+  q.disabled = true;
   console.error(err);
-  return [];
-});
-
-render(maps);
+}
 
 q.addEventListener("input", () => render(search(maps, q.value)));
 

@@ -118,8 +118,8 @@ main {
   transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
 
-.card:hover,
-.card:focus-visible {
+a.card:hover,
+a.card:focus-visible {
   border-color: var(--accent);
   transform: translateY(-2px);
   box-shadow: var(--shadow);
@@ -222,8 +222,8 @@ a {
     transition: none;
   }
 
-  .card:hover,
-  .card:focus-visible {
+  a.card:hover,
+  a.card:focus-visible {
     transform: none;
   }
 }

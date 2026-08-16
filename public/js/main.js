@@ -12,27 +12,28 @@ const el = (tag, cls, text) => {
 };
 
 function card(map) {
-  const offsite = map.hosting === "external";
-  const a = el("a", "card");
-  a.href = map.url;
+  const linked = Boolean(map.url);
+  const offsite = linked && map.hosting === "external";
+  const node = el(linked ? "a" : "div", "card");
+  if (linked) node.href = map.url;
   if (offsite) {
-    a.target = "_blank";
-    a.rel = "noopener";
+    node.target = "_blank";
+    node.rel = "noopener";
   }
 
   const top = el("div", "card-top");
   top.append(el("h2", null, map.name));
   if (map.status) top.append(el("span", `status ${map.status}`, map.status.replace("-", " ")));
-  a.append(top, el("p", "blurb", map.blurb ?? ""));
+  node.append(top, el("p", "blurb", map.blurb ?? ""));
 
   const chips = el("div", "chips");
   for (const g of map.games ?? []) chips.append(el("span", "chip", g.name));
   for (const p of platforms(map)) chips.append(el("span", "chip platform", p));
-  a.append(chips);
+  node.append(chips);
 
-  if (offsite) a.append(el("span", "offsite", `↗ ${new URL(map.url).host}`));
+  if (offsite) node.append(el("span", "offsite", `↗ ${new URL(map.url).host}`));
 
-  return a;
+  return node;
 }
 
 function render(maps) {

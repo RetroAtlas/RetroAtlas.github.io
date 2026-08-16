@@ -1,0 +1,8 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "atlas", "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m","http.server","8477","-d","public"],
+      "port": 8477 }
+  ]
+}

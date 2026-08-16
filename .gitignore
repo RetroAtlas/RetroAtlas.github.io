@@ -5,5 +5,5 @@ Thumbs.db
 .idea/
 .vscode/
 
-# local preview config
-.claude/
+# per-machine agent settings
+.claude/settings.local.json

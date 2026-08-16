@@ -26,6 +26,8 @@ Add one entry to [public/catalog.json](public/catalog.json). The page renders fr
 
 `status` is `live`, `in-progress` or `planned`, on the map and on each game independently. A planned map can sit in the catalog before it has anywhere to point.
 
+`repo` is stored but never shown: a card is a single link and has no room for a second one. It is here for the same reason as `games` — this file is the only place that records where a map's source lives, which is what anything indexing the org would come here to read.
+
 `games` is what makes the file worth more than the page it feeds: it is the machine-readable answer to which games are covered and on what hardware, which is what a shared navigation bar, a cross-map search or a future viewer library would each want to read.
 
 ## Running it

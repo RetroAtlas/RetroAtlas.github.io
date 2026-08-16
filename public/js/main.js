@@ -2,6 +2,7 @@ import { load, platforms, search } from "./catalog.js";
 
 const grid = document.getElementById("grid");
 const empty = document.getElementById("empty");
+const count = document.getElementById("count");
 const q = document.getElementById("q");
 
 const el = (tag, cls, text) => {
@@ -39,6 +40,7 @@ function card(map) {
 function render(maps) {
   grid.replaceChildren(...maps.map(card));
   empty.hidden = maps.length > 0;
+  count.textContent = maps.length === 1 ? "1 map" : `${maps.length} maps`;
 }
 
 let maps = [];

@@ -31,7 +31,7 @@ function card(map) {
   for (const p of platforms(map)) chips.append(el("span", "chip platform", p));
   node.append(chips);
 
-  if (offsite) node.append(el("span", "offsite", `↗ ${new URL(map.url).host}`));
+  if (offsite) node.append(el("span", "offsite", `↗ ${new URL(map.url, location.href).host}`));
 
   return node;
 }

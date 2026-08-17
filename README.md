@@ -46,6 +46,7 @@ python3 -m http.server 8477 -d public
 - `public/js/main.js` — renders the cards and wires the search box.
 - `public/index.html`, `public/css/main.css` — the page and its styling.
 - `tools/og.html` — the source the social card image is rendered from; repo-only, not deployed.
+- `tools/banner.html`, `tools/banners.sh` — the profile banners for the social platforms, rendered into `tools/banners/`; repo-only too.
 
 ## Licensing
 

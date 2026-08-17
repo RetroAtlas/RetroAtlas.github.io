@@ -25,6 +25,18 @@ oxipng -o max --strip safe public/og.png
 
 Keep it at 1200×630, and keep the `og:image:width` and `og:image:height` tags saying so — scrapers lay out the preview from those before the image itself arrives.
 
+## Platform banners
+
+`tools/banners/` holds the profile banners, rendered from `tools/banner.html` by `tools/banners.sh`. The template is sized in `vh`/`vw` rather than pixels, so one page renders every platform — adding a size is a line in the `sizes` list in the script, not a new file:
+
+```bash
+./tools/banners.sh
+```
+
+Every platform crops a banner differently and none of them tell you where, so the lockup stays centred and compact rather than filling the canvas. YouTube crops hardest — a 2048×1152 upload is shown as a 1546×423 band on TV and desktop, and anything outside that is only ever seen on the channel page.
+
+Like the card, these are repo-only and never deployed; nothing under `tools/` ships.
+
 ## Hosting
 
 GitHub serves an org site from the repo named `<org>.github.io`, and every other repo in the org is then served as a path beneath that site's domain. So a map hosted here needs no DNS of its own and its `url` is a path, while a map on its own domain keeps one and is linked absolutely — the `hosting` field is what the page reads to tell those apart.

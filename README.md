@@ -50,4 +50,6 @@ python3 -m http.server 8477 -d public
 
 ## Licensing
 
-Copyright (C) 2026 mariobob, under GPL-2.0 (see [LICENSE](LICENSE)), matching the maps it indexes. Extracted imagery shown by those maps remains the property of its respective rights holders and is presented for research and preservation.
+Copyright (C) 2026 mariobob, under GPL-2.0 (see [LICENSE](LICENSE)), matching the maps it indexes. The licence covers the code here and nothing else — the RetroAtlas name and wordmark are not licensed with it.
+
+This repo holds no extracted game data; it is a card index. The maps it links to do hold it, and that material stays the property of its respective rights holders, presented for research and preservation. A rights holder who wants something taken down can write to hello@retroatlas.org.

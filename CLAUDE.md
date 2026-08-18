@@ -39,6 +39,8 @@ Like the card, these are repo-only and never deployed; nothing under `tools/` sh
 
 ## Hosting
 
-GitHub serves an org site from the repo named `<org>.github.io`, and every other repo in the org is then served as a path beneath that site's domain. So a map hosted here needs no DNS of its own and its `url` is a path, while a map on its own domain keeps one and is linked absolutely — the `hosting` field is what the page reads to tell those apart.
+Every map gets a subdomain of its own — `metalslug.retroatlas.org`, not `retroatlas.org/MetalSlugMap/`. A site served under a path has to thread that prefix through every asset URL and deep link it builds, and a tile-heavy viewer builds a lot of both; served at a root it does not. The repo name and the subdomain are independent, since the `CNAME` file in the deployed directory is what decides the URL, so a repo never has to be renamed to change one.
 
-Custom-domain verification is per-org: verify `retroatlas.org` on the org **before** transferring a map repo in, because an unverified custom domain is the window in which someone else can claim it on their own Pages site.
+Per map that is a `CNAME` record pointing the subdomain at `retroatlas.github.io` — the org site, never the repo — plus the custom domain set in that repo's Pages settings. Add the record **unproxied**: behind Cloudflare's proxy GitHub cannot see the target, so it never issues the certificate and Enforce HTTPS stays greyed out. Turn the proxy back on afterwards if you want it, with SSL mode Full (strict), or the site will redirect in a loop. Never a wildcard record — `*.retroatlas.org` reopens the takeover hole on a domain that is otherwise closed.
+
+Verifying `retroatlas.org` on the org covers its immediate subdomains too, so one verification protects every map. Do it **before** transferring a map repo in, because an unverified custom domain is the window in which someone else can claim it on their own Pages site.

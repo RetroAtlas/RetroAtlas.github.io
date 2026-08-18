@@ -14,7 +14,7 @@ Add one entry to [public/catalog.json](public/catalog.json). The page renders fr
  "name": "Metal Slug Map",
  "franchise": "Metal Slug",
  "blurb": "One or two sentences on what the map shows.",
- "url": "/MetalSlugMap/",
+ "url": "https://metalslug.retroatlas.org/",
  "repo": "https://github.com/RetroAtlas/MetalSlugMap",
  "hosting": "atlas",
  "status": "in-progress",
@@ -22,7 +22,9 @@ Add one entry to [public/catalog.json](public/catalog.json). The page renders fr
 }
 ```
 
-`hosting` is the field that matters most. `atlas` means the map is a repo in this org and `url` is a path — GitHub Pages serves every repo in the org under the org site's domain, so `RetroAtlas/MetalSlugMap` is reachable at `/MetalSlugMap/` with no DNS of its own. `external` means the map keeps its own domain, `url` is absolute, and the card opens it in a new tab and shows the host.
+`hosting` is the field that matters most. `atlas` means the map is published under `retroatlas.org` on a subdomain of its own, served by a repo in this org, and the card opens it in the same tab because it is the same brand. `external` means the map keeps a domain of its own, and the card opens it in a new tab and shows the host. `url` is absolute either way.
+
+An `atlas` map needs its subdomain pointed at `retroatlas.github.io` and set as the repo's custom domain before the card resolves. Two things catch people out: the DNS target is the org site with no repo path on the end, and the record has to be unproxied until the certificate issues.
 
 `status` is `live`, `in-progress` or `planned`, on the map and on each game independently. A planned map can sit in the catalog before it has anywhere to point.
 

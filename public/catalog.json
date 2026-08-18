@@ -19,7 +19,7 @@
    "name": "Metal Slug Map",
    "franchise": "Metal Slug",
    "blurb": "Stage art, tilemaps and sprite banks lifted off the PlayStation disc, assembled along the axis each stage runs on.",
-   "url": "/MetalSlugMap/",
+   "url": "https://metalslug.retroatlas.org/",
    "repo": "https://github.com/RetroAtlas/MetalSlugMap",
    "hosting": "atlas",
    "status": "in-progress",

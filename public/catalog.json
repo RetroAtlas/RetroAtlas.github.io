@@ -26,6 +26,19 @@
    "games": [
     { "id": "msx", "name": "Metal Slug X", "platform": "PlayStation", "status": "in-progress" }
    ]
+  },
+  {
+   "id": "hercules",
+   "name": "Hercules Map",
+   "franchise": "Hercules",
+   "blurb": "Levels assembled from their tile grids, each cell a small textured mesh drawn straight off the PlayStation disc.",
+   "url": "https://hercules.retroatlas.org/",
+   "repo": "https://github.com/RetroAtlas/HerculesMap",
+   "hosting": "atlas",
+   "status": "in-progress",
+   "games": [
+    { "id": "herc", "name": "Disney's Hercules Action Game", "platform": "PlayStation", "status": "in-progress" }
+   ]
   }
  ]
 }

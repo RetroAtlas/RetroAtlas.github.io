@@ -39,6 +39,19 @@
    "games": [
     { "id": "herc", "name": "Disney's Hercules Action Game", "platform": "PlayStation", "status": "in-progress" }
    ]
+  },
+  {
+   "id": "kulaworld",
+   "name": "Kula World Map",
+   "franchise": "Kula World",
+   "blurb": "The block lattice of every level and every object the game places on it, read straight off the PlayStation disc. Sold in North America as Roll Away.",
+   "url": "https://kulaworld.retroatlas.org/",
+   "repo": "https://github.com/RetroAtlas/KulaWorldMap",
+   "hosting": "atlas",
+   "status": "in-progress",
+   "games": [
+    { "id": "kula", "name": "Kula World", "platform": "PlayStation", "status": "in-progress" }
+   ]
   }
  ]
 }

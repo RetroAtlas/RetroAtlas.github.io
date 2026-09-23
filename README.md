@@ -18,6 +18,7 @@ Add one entry to [public/catalog.json](public/catalog.json). The page renders fr
  "repo": "https://github.com/RetroAtlas/MetalSlugMap",
  "hosting": "atlas",
  "status": "in-progress",
+ "started": "2026-07-21",
  "games": [{ "id": "msx", "name": "Metal Slug X", "platform": "PlayStation", "status": "complete" }]
 }
 ```
@@ -27,6 +28,8 @@ Add one entry to [public/catalog.json](public/catalog.json). The page renders fr
 An `atlas` map needs its subdomain pointed at `retroatlas.github.io` and set as the repo's custom domain before the card resolves. Two things catch people out: the DNS target is the org site with no repo path on the end, and the record has to be unproxied until the certificate issues.
 
 `status` is `live`, `in-progress`, `draft` or `planned`, from most finished to least, on the map and on each game independently. A planned map can sit in the catalog before it has anywhere to point.
+
+`started` is the day of the first commit in the map's repo, as `YYYY-MM-DD`, which `git log --max-parents=0 --format=%as` prints. It is set once, when the map is added, and the card shows its month and year.
 
 `repo` is stored but never shown: a card is a single link and has no room for a second one. It is here for the same reason as `games` — this file is the only place that records where a map's source lives, which is what anything indexing the org would come here to read.
 

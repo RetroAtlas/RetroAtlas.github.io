@@ -12,6 +12,8 @@ const el = (tag, cls, text) => {
   return n;
 };
 
+const month = new Intl.DateTimeFormat("en", { month: "long", year: "numeric", timeZone: "UTC" });
+
 function card(map) {
   const linked = Boolean(map.url);
   const offsite = linked && map.hosting === "external";
@@ -32,7 +34,11 @@ function card(map) {
   for (const p of platforms(map)) chips.append(el("span", "chip platform", p));
   node.append(chips);
 
-  if (offsite) node.append(el("span", "offsite", `↗ ${new URL(map.url, location.href).host}`));
+  const foot = el("div", "card-foot");
+  const started = new Date(map.started);
+  if (!Number.isNaN(started.getTime())) foot.append(el("span", null, `Started ${month.format(started)}`));
+  if (offsite) foot.append(el("span", "offsite", `↗ ${new URL(map.url, location.href).host}`));
+  if (foot.hasChildNodes()) node.append(foot);
 
   return node;
 }

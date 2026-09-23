@@ -9,6 +9,7 @@
    "repo": "https://github.com/RetroAtlas/OddworldMap",
    "hosting": "external",
    "status": "live",
+   "started": "2026-07-12",
    "games": [
     { "id": "ao", "name": "Abe's Oddysee", "platform": "PlayStation", "status": "complete" },
     { "id": "ae", "name": "Abe's Exoddus", "platform": "PlayStation", "status": "complete" }
@@ -23,6 +24,7 @@
    "repo": "https://github.com/RetroAtlas/MetalSlugMap",
    "hosting": "atlas",
    "status": "draft",
+   "started": "2026-07-21",
    "games": [
     { "id": "msx", "name": "Metal Slug X", "platform": "PlayStation", "status": "in-progress" }
    ]
@@ -36,6 +38,7 @@
    "repo": "https://github.com/RetroAtlas/HerculesMap",
    "hosting": "atlas",
    "status": "draft",
+   "started": "2026-08-24",
    "games": [
     { "id": "herc", "name": "Disney's Hercules Action Game", "platform": "PlayStation", "status": "in-progress" }
    ]
@@ -49,6 +52,7 @@
    "repo": "https://github.com/RetroAtlas/KulaWorldMap",
    "hosting": "atlas",
    "status": "in-progress",
+   "started": "2026-09-04",
    "games": [
     { "id": "kula", "name": "Kula World", "platform": "PlayStation", "status": "in-progress" }
    ]

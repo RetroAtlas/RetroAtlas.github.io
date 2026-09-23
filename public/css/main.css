@@ -194,10 +194,17 @@ a.card:focus-visible {
   color: var(--dim);
 }
 
-.offsite {
+.card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
   margin-top: 12px;
   color: var(--dim);
   font-size: 0.8rem;
+}
+
+.offsite {
+  margin-left: auto;
 }
 
 .empty {

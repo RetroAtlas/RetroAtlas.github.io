@@ -31,6 +31,8 @@ An `atlas` map needs its subdomain pointed at `retroatlas.github.io` and set as 
 
 `started` is the day of the first commit in the map's repo, as `YYYY-MM-DD`, which `git log --max-parents=0 --format=%as` prints. It is set once, when the map is added, and the card shows its month and year.
 
+The page orders the cards by `status`, most finished first, then by `started`, oldest first, so where an entry sits in this file makes no difference.
+
 `repo` is stored but never shown: a card is a single link and has no room for a second one. It is here for the same reason as `games` — this file is the only place that records where a map's source lives, which is what anything indexing the org would come here to read.
 
 `games` is what makes the file worth more than the page it feeds: it is the machine-readable answer to which games are covered and on what hardware, which is what a shared navigation bar, a cross-map search or a future viewer library would each want to read.
@@ -47,7 +49,7 @@ python3 -m http.server 8477 -d public
 
 - `public/` — the deployed site; the host serves this directory and nothing above it.
 - `public/catalog.json` — the maps, and the only file that changes when one is added.
-- `public/js/catalog.js` — loading and searching the catalog.
+- `public/js/catalog.js` — loading, ordering and searching the catalog.
 - `public/js/main.js` — renders the cards and wires the search box.
 - `public/index.html`, `public/css/main.css` — the page and its styling.
 - `tools/og.html` — the source the social card image is rendered from; repo-only, not deployed.

@@ -1,4 +1,4 @@
-import { load, platforms, search } from "./catalog.js";
+import { load, platforms, search, sort } from "./catalog.js";
 
 const grid = document.getElementById("grid");
 const empty = document.getElementById("empty");
@@ -51,7 +51,7 @@ function render(maps) {
 
 let maps = [];
 try {
-  maps = await load();
+  maps = sort(await load());
   render(maps);
 } catch (err) {
   grid.replaceChildren(el("p", "empty", "The catalog could not be loaded."));

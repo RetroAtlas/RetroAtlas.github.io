@@ -22,7 +22,7 @@
    "url": "https://metalslug.retroatlas.org/",
    "repo": "https://github.com/RetroAtlas/MetalSlugMap",
    "hosting": "atlas",
-   "status": "in-progress",
+   "status": "draft",
    "games": [
     { "id": "msx", "name": "Metal Slug X", "platform": "PlayStation", "status": "in-progress" }
    ]
@@ -35,7 +35,7 @@
    "url": "https://hercules.retroatlas.org/",
    "repo": "https://github.com/RetroAtlas/HerculesMap",
    "hosting": "atlas",
-   "status": "in-progress",
+   "status": "draft",
    "games": [
     { "id": "herc", "name": "Disney's Hercules Action Game", "platform": "PlayStation", "status": "in-progress" }
    ]

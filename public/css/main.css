@@ -184,6 +184,11 @@ a.card:focus-visible {
   color: #e8a33d;
 }
 
+.status.draft {
+  background: rgba(176, 156, 232, 0.15);
+  color: #b09ce8;
+}
+
 .status.planned {
   background: var(--panel2);
   color: var(--dim);

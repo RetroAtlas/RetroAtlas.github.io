@@ -26,7 +26,7 @@ Add one entry to [public/catalog.json](public/catalog.json). The page renders fr
 
 An `atlas` map needs its subdomain pointed at `retroatlas.github.io` and set as the repo's custom domain before the card resolves. Two things catch people out: the DNS target is the org site with no repo path on the end, and the record has to be unproxied until the certificate issues.
 
-`status` is `live`, `in-progress` or `planned`, on the map and on each game independently. A planned map can sit in the catalog before it has anywhere to point.
+`status` is `live`, `in-progress`, `draft` or `planned`, from most finished to least, on the map and on each game independently. A planned map can sit in the catalog before it has anywhere to point.
 
 `repo` is stored but never shown: a card is a single link and has no room for a second one. It is here for the same reason as `games` — this file is the only place that records where a map's source lives, which is what anything indexing the org would come here to read.
 

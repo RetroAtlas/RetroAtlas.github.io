@@ -13,6 +13,7 @@ It is the landing page for [retroatlas.org](https://retroatlas.org/), and delibe
 - `public/catalog.json` is the single source of truth. Adding, renaming or retiring a map is a catalog edit; if it ever requires touching `index.html`, the page has grown a hardcoded assumption that should go back into the data.
 - Search matches every term against one flattened haystack per map, so a query like `playstation oddworld` narrows rather than widens. Keep new catalog fields in `haystack()` if they are worth searching.
 - `/` focuses the search box and `Escape` clears it, matching the viewers this page links to.
+- The contact address is never written out under `public/`: `main.js` joins it from its parts at runtime, out of reach of scrapers that read the source. Anything else on the page that needs it builds it the same way.
 
 ## The social card
 

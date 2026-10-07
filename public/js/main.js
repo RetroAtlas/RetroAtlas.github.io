@@ -5,6 +5,8 @@ const empty = document.getElementById("empty");
 const count = document.getElementById("count");
 const q = document.getElementById("q");
 
+document.getElementById("contact").href = `mailto:${["hello", "retroatlas.org"].join("@")}`;
+
 const el = (tag, cls, text) => {
   const n = document.createElement(tag);
   if (cls) n.className = cls;

@@ -51,10 +51,10 @@
    "url": "https://kulaworld.retroatlas.org/",
    "repo": "https://github.com/RetroAtlas/KulaWorldMap",
    "hosting": "atlas",
-   "status": "in-progress",
+   "status": "live",
    "started": "2026-09-04",
    "games": [
-    { "id": "kula", "name": "Kula World", "platform": "PlayStation", "status": "in-progress" }
+    { "id": "kula", "name": "Kula World", "platform": "PlayStation", "status": "complete" }
    ]
   }
  ]

@@ -8,7 +8,7 @@ It is the landing page for [retroatlas.org](https://retroatlas.org/), and delibe
 
 ## Conventions
 
-- The deployed site is `public/`, and the host serves that directory — repo artefacts (`README.md`, this file) then cannot ship by accident. `.github/workflows/static.yml` matches the sibling projects verbatim, action versions included.
+- The deployed site is `public/`, and the host serves that directory — repo artefacts (`README.md`, this file) then cannot ship by accident. The Pages deploy is a job in [.github/workflows/ci.yml](.github/workflows/ci.yml), copied from OddworldMap's with its action versions. A check belongs in the same file and in the deploy's `needs`; one in a workflow of its own would gate nothing.
 - Dependency-free ES modules, no build step, no framework. The page must work when opened from a plain static server.
 - `public/catalog.json` is the single source of truth. Adding, renaming or retiring a map is a catalog edit; if it ever requires touching `index.html`, the page has grown a hardcoded assumption that should go back into the data.
 - Search matches every term against one flattened haystack per map, so a query like `playstation oddworld` narrows rather than widens. Keep new catalog fields in `haystack()` if they are worth searching.

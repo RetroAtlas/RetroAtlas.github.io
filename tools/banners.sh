@@ -13,6 +13,7 @@ sizes=(
   "twitter 1500 500"
   "github 1280 640"
   "reddit 1920 384"
+  "facebook 851 315"
 )
 
 mkdir -p "$out"

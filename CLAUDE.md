@@ -36,6 +36,8 @@ Keep it at 1200×630, and keep the `og:image:width` and `og:image:height` tags s
 
 Every platform crops a banner differently and none of them tell you where, so the lockup stays centred and compact rather than filling the canvas. YouTube crops hardest — a 2048×1152 upload is shown as a 1546×423 band on TV and desktop, and anything outside that is only ever seen on the channel page.
 
+Facebook's 851×315 cover is shown 820×312 on desktop and 640×360 on mobile, so mobile keeps only the central 560px of the width. The lockup stays inside that, and clear of the bottom-left where the profile picture overlaps on desktop.
+
 Like the card, these are repo-only and never deployed; nothing under `tools/` ships.
 
 ## Hosting

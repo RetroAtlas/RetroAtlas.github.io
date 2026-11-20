@@ -25,7 +25,7 @@ Add one entry to [public/catalog.json](public/catalog.json). The page renders fr
 
 `hosting` is the field that matters most. `atlas` means the map is published under `retroatlas.org` on a subdomain of its own, served by a repo in this org, and the card opens it in the same tab because it is the same brand. `external` means the map keeps a domain of its own, and the card opens it in a new tab and shows the host. `url` is absolute either way.
 
-An `atlas` map needs its subdomain pointed at `retroatlas.github.io` and set as the repo's custom domain before the card resolves. Two things catch people out: the DNS target is the org site with no repo path on the end, and the record has to be unproxied until the certificate issues.
+An `atlas` map needs its subdomain pointed at `retroatlas.github.io` and set as the repo's custom domain before the card resolves. What catches people out is that the DNS target is the org site, with no repo path on the end. The record goes in proxied from the start; GitHub then never issues a certificate for the name, and needs none, because the zone runs on SSL mode Full.
 
 `status` is `live`, `in-progress`, `draft` or `planned`, from most finished to least, on the map and on each game independently. A planned map can sit in the catalog before it has anywhere to point.
 

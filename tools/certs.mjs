@@ -39,18 +39,19 @@ async function originCertificate(host) {
   return null;
 }
 
-async function edgeStatus(host) {
+async function edge(host) {
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const res = await fetch(`https://${host}/`, { redirect: "manual", signal: AbortSignal.timeout(20000) });
-      return res.status;
+      const from = res.headers.has("cf-mitigated") ? "challenge" : res.headers.has("x-github-request-id") ? "GitHub" : "Cloudflare";
+      return { status: res.status, from };
     } catch {}
   }
-  return 0;
+  return { status: 0, from: "" };
 }
 
 async function check({ host, live }) {
-  const [cert, status] = await Promise.all([originCertificate(host), edgeStatus(host)]);
+  const [cert, { status, from }] = await Promise.all([originCertificate(host), edge(host)]);
   let held = "-";
   let expiry = "-";
   if (cert) {
@@ -61,7 +62,8 @@ async function check({ host, live }) {
   }
   let problem = "";
   if (status === 0) problem = "no answer through Cloudflare";
-  else if (status >= 500 || (live && status >= 400)) problem = `answers ${status} through Cloudflare`;
+  else if (from === "challenge") problem = "Cloudflare challenged the request";
+  else if (status >= 500 || (live && status >= 400)) problem = `${from} answers ${status}`;
   return { host, held, expiry, status: String(status || "-"), problem };
 }
 
